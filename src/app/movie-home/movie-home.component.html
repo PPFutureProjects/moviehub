@@ -1,0 +1,22 @@
+<mat-toolbar>
+  Favorite 'Wonder' Movies for this week
+</mat-toolbar>
+<div class="bg" fxLayout="row wrap" fxLayoutGap="1%" fxLayoutAlign="center">
+  <mat-card fxFlex="23%" class="example-card" (click)="selectTile(tile)" *ngFor="let tile of movieData">
+    <mat-card-header>
+      <mat-card-title> {{ tile.title }}</mat-card-title>
+      <mat-card-subtitle>Released on: {{ tile.release_date }}</mat-card-subtitle>
+
+    </mat-card-header>
+    <img mat-card-image [src]="tile.poster_path" alt="{{ tile.title}}">
+    <mat-card-content>
+      <p>
+        Average movie rating : {{ tile.vote_average}}
+        <i style="float:right" (click)="addToFav(tile)" class="material-icons">
+          favorite_border
+        </i>
+      </p>
+    </mat-card-content>
+
+  </mat-card>
+</div>

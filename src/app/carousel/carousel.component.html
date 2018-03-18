@@ -1,0 +1,12 @@
+<ngx-carousel [inputs]="carouselTileOne">
+  <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+    <div class="wBg">
+      <div class="tile" [style.background]="'url(' + tile.title + ')'">
+        <h1>{{i + 1 }}</h1>
+      </div>
+      <h4> {{ tile.name }} </h4>
+    </div>
+  </ngx-tile>
+  <button NgxCarouselPrev class="leftRs">&lt;</button>
+  <button NgxCarouselNext class="rightRs">&gt;</button>
+</ngx-carousel>

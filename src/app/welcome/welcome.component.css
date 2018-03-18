@@ -1,0 +1,10 @@
+.footer {
+  text-align: center;
+}
+
+mat-card.footer {
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 14px;
+}
+

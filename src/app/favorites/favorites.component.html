@@ -1,0 +1,30 @@
+<mat-toolbar>
+  Your Favorites
+</mat-toolbar>
+
+<mat-card *ngIf="favArray.length === 0" style="text-align:center">
+  <strong> Seems you dont like movies huh? Go ahead make a movie your fav! </strong>
+  <a mat-mini-fab routerLink="/movies">
+    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+  </a>
+</mat-card>
+
+<div class="bg" fxLayout="row wrap" fxLayoutGap="1%" fxLayoutAlign="start start">
+  <mat-card fxFlex="23%" class="example-card" *ngFor="let tile of favArray">
+    <mat-card-header>
+      <mat-card-title> {{ tile.title }}</mat-card-title>
+      <mat-card-subtitle>Released on: {{ tile.release_date }}</mat-card-subtitle>
+
+    </mat-card-header>
+    <img mat-card-image [src]="tile.poster_path" alt="{{ tile.title}}">
+    <mat-card-content>
+      <p>
+        Average movie rating : {{ tile.vote_average}}
+        <i style="float:right" class="material-icons">
+          favorite_border
+        </i>
+      </p>
+    </mat-card-content>
+
+  </mat-card>
+</div>

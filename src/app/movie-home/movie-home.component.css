@@ -1,0 +1,22 @@
+mat-grid-tile {
+  background: lightblue;
+}
+
+mat-card {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.mat-card-image {
+  height: 350px;
+}
+
+.bg {
+  background-color: #eee;
+}
+
+.material-icons {
+  color: #b90b10;
+}
+

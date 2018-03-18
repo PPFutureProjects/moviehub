@@ -1,0 +1,31 @@
+<mat-toolbar>
+  Details of selected movie
+</mat-toolbar>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <a routerLink="/home">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </a>
+    </div>
+    <mat-card-title> {{ selectedMovie.title }} </mat-card-title>
+    <mat-card-subtitle> Release Date: {{ selectedMovie.release_date }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="selectedMovie.poster_path" alt="{{ selectedMovie.title }}">
+  <mat-card-content>
+    <p>
+      <strong>Description:</strong> {{ selectedMovie.overview }}
+    </p>
+    <p>
+      <strong> Popularity: </strong>{{ selectedMovie.popularity }}
+    </p>
+    <p>
+      <strong> Original Language: </strong>{{ selectedMovie.original_language }}
+    </p>
+    <p>
+      <strong> Category: </strong>{{ selectedMovie.adult ? 'General' : 'Adult' }}
+    </p>
+    <button mat-raised-button (click)="addToFavorites(selectedMovie)" color="accent">Add To Favorite</button>
+  </mat-card-content>
+</mat-card>
