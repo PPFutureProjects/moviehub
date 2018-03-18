@@ -5,3 +5,7 @@ A sample bookmyshow kind of application with firebase authentication along with 
 ## Credentials
 
 Username: test@test.com and password: tester
+
+## Test case coverage
+
+![Test case Screenshot](/test-cases.jpg?raw=true "Optional Title")
