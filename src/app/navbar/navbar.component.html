@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <i class="material-icons">movie</i>
-    <a mat-button routerLink="/">Home</a>
-    <a *ngIf="auth" mat-button routerLink="/movies">Movies</a>
-    <a *ngIf="auth" mat-button routerLink="/movies/favorites">Favorites</a>
+    <i style="margin-right:20px" class="material-icons">movie</i>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" mat-button routerLink="/">Home</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="auth" mat-button routerLink="/movies">Movies</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="auth" mat-button routerLink="/movies/favorites">Favorites</a>
     <span class="example-spacer"></span>
-    <a *ngIf="!auth" mat-button routerLink="/login">Login</a>
+    <a routerLinkActive="active" *ngIf="!auth" mat-button routerLink="/login">Login</a>
     <button (click)="logout()" mat-button *ngIf="auth">Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>
