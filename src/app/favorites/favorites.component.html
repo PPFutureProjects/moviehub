@@ -4,9 +4,7 @@
 
 <mat-card *ngIf="favArray.length === 0" style="text-align:center">
   <strong> Seems you dont like movies huh? Go ahead make a movie your fav! </strong>
-  <a mat-mini-fab routerLink="/movies">
-    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
-  </a>
+  <a mat-raised-button color="accent" routerLink="/movies">Back To Movies</a>
 </mat-card>
 
 <div class="bg" fxLayout="row wrap" fxLayoutGap="1%" fxLayoutAlign="start start">
