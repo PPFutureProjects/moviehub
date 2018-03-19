@@ -3,15 +3,22 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
       <mat-form-field>
         <input name="email" type="email" formControlName="email" matInput placeholder="Your email" />
-        <mat-hint> Please enter a valid email</mat-hint>
-        <mat-error> Invalid email </mat-error>
+        <mat-error *ngIf="!loginForm.get('email').valid
+        && loginForm.get('email').touched">Email is required
+           </mat-error>
+         <mat-error *ngIf="!loginForm.get('email').hasError('required')">
+           Field must not be empty</mat-error>
+
       </mat-form-field>
 
-      <mat-form-field>
-        <input name="password" type="password" formControlName="password" matInput placeholder="Your password" />
-        <mat-hint> Please enter the password</mat-hint>
-        <mat-error> Missing password </mat-error>
+      <mat-form-field hintLabel="*6 characters long">
+        <input matInput formControlName="password" name="password" type="password"  placeholder="Your password">
+        <mat-error *ngIf="!loginForm.get('password').valid
+        && loginForm.get('password').touched">Password is required
+           </mat-error>
+        <mat-hint align="end"> {{ pwd?.length }} / 6 </mat-hint>
       </mat-form-field>
+
 
       <button type="submit" mat-raised-button [disabled]="loginForm.invalid" color="primary">Login </button>
 

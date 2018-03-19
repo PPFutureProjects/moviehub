@@ -11,7 +11,11 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  get pwd(){
+    return this.loginForm.get('password').value;
+  }
   constructor(private authService: AuthService) { }
+
 
   ngOnInit() {
     this.loginForm = new FormGroup({
