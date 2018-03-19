@@ -9,7 +9,7 @@ Firebase hosted [here](https://movie-e632d.firebaseapp.com/)
 Username: test@test.com 
 Password: tester
 
-##Stack
+## Stack
 
 Angular 5 and angular material components with firebase and angular fire as back end with angular-flexbox used for styling. 
 Test cases in jasmine with karma. 
